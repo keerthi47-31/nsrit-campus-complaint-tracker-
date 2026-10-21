@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NSRIT Campus Complaint Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>NSRIT Engineering College</h1>
+      <p>Campus Complaint Tracker</p>
+    </div>
+
+    <button id="adminButton" class="outline">Admin Dashboard</button>
+  </header>
+
+  <main>
+    <!-- Student Portal -->
+    <section id="studentView">
+      <div class="hero">
+        <h2>Report a Campus Issue</h2>
+        <p>Submit your complaint. The responsible team can track and resolve it.</p>
+      </div>
+
+      <section class="card">
+        <h2>Student Complaint Form</h2>
+
+        <form id="complaintForm">
+          <div class="grid">
+            <label>
+              Student Name
+              <input id="student_name" required placeholder="Enter your name">
+            </label>
+
+            <label>
+              Department
+              <select id="student_department" required>
+                <option value="">Select department</option>
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>Mechanical Engineering</option>
+                <option>Civil Engineering</option>
+                <option>Other</option>
+              </select>
+            </label>
+
+            <label>
+              Complaint Title
+              <input id="title" required placeholder="Example: Broken fan in classroom">
+            </label>
+
+            <label>
+              Category
+              <select id="category" required>
+                <option value="">Select category</option>
+                <option>Electricity</option>
+                <option>Water / Plumbing</option>
+                <option>Cleanliness</option>
+                <option>Wi-Fi / Internet</option>
+                <option>Classroom Facilities</option>
+                <option>Other</option>
+              </select>
+            </label>
+
+            <label>
+              Location
+              <input id="location" required placeholder="Example: Block A, Room 204">
+            </label>
+
+            <label>
+              Priority
+              <select id="priority">
+                <option>Low</option>
+                <option selected>Medium</option>
+                <option>High</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Description
+            <textarea id="description" required placeholder="Describe the problem clearly."></textarea>
+          </label>
+
+          <button type="submit">Submit Complaint</button>
+          <p id="formMessage" class="message"></p>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Recent Complaints</h2>
+        <div id="studentList"></div>
+      </section>
+    </section>
+
+    <!-- Admin Login -->
+    <section id="loginView" class="hidden card narrow">
+      <h2>Admin Login</h2>
+      <p>Only authorised NSRIT staff can update complaints.</p>
+
+      <form id="loginForm">
+        <label>
+          Username
+          <input id="username" required>
+        </label>
+
+        <label>
+          Password
+          <input id="password" type="password" required>
+        </label>
+
+        <button type="submit">Login</button>
+        <p id="loginMessage" class="message"></p>
+      </form>
+
+      <button id="backButton" class="link">Back to Student Portal</button>
+    </section>
+
+    <!-- Admin Dashboard -->
+    <section id="adminView" class="hidden">
+      <div class="page-heading">
+        <div>
+          <h2>Admin Dashboard</h2>
+          <p>Review and resolve student complaints.</p>
+        </div>
+
+        <button id="logoutButton" class="outline blue">Logout</button>
+      </div>
+
+      <div id="stats" class="stats"></div>
+
+      <section class="card">
+        <label>
+          Filter by Status
+          <select id="statusFilter">
+            <option value="">All Complaints</option>
+            <option>Open</option>
+            <option>In Progress</option>
+            <option>Resolved</option>
+          </select>
+        </label>
+
+        <div id="adminList"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    Built for NSRIT Engineering College Hackathon
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
