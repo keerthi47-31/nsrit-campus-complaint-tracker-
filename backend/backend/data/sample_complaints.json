@@ -1,0 +1,22 @@
+[
+  {
+    "student_name": "Anjali",
+    "student_department": "CSE",
+    "title": "Water leakage near library",
+    "category": "Water / Plumbing",
+    "location": "Library, first floor",
+    "description": "Water is leaking from the ceiling.",
+    "priority": "High",
+    "status": "Open"
+  },
+  {
+    "student_name": "Ravi",
+    "student_department": "ECE",
+    "title": "Wi-Fi unavailable",
+    "category": "Wi-Fi / Internet",
+    "location": "Block B, Room 103",
+    "description": "The classroom Wi-Fi has not been working since morning.",
+    "priority": "Medium",
+    "status": "In Progress"
+  }
+]
